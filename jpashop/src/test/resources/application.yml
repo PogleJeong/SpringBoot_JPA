@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:test # in memory mode 로 설정되어 사용됨 (h2 는 java로 이루어져있어 jvm 에서도 동작함
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop # 자동으로 table 생성하고 종료시점에 table 드랍(자원정리)
+    properties:
+      hibernate:
+        #  show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug # jpa, hibernate 가 처리하는 sql을 보여줌
